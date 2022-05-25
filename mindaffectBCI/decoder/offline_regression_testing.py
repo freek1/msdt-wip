@@ -123,11 +123,17 @@ def pipeline_test(dataset:str, dataset_args:dict, loader_args:dict, pipeline, cv
     loader, filenames, _ = get_dataset(dataset,**dataset_args)
 
     print("\n{} Files\n: {}".format(len(filenames),filenames))
-
+    # Print the output to a file to be shown in GitHub Actions
+    with open('metrics.txt', 'w') as f:
+        f.write('\n{} Files\n: {}".format(len(filenames),filenames)')
 
     # first make the base pipeline to run
     clsfr = make_preprocess_pipeline(pipeline)
     print(clsfr)
+
+    # Print the output to a file to be shown in GitHub Actions
+    with open('metrics.txt', 'w') as f:
+        f.write(clsfr)
 
     # run this pipeline with all the settings.
     # N.B. set n_jobs=1 for pipeline debugging as it gives more informative error messages and stops at first error
@@ -137,15 +143,29 @@ def pipeline_test(dataset:str, dataset_args:dict, loader_args:dict, pipeline, cv
     print("Ave-DC")
     print(print_decoding_curve(*(average_results_per_config(res)['decoding_curve'][0])))
 
+    # Print the output to a file to be shown in GitHub Actions
+    with open('metrics.txt', 'w') as f:
+        f.write('Ave-DC\n')
+        f.write(print_decoding_curve(*(average_results_per_config(res)['decoding_curve'][0])))
+            
+
     plt.figure()
     plot_decoding_curves(res['decoding_curve'],labels=res['filename'])
     plt.show(block=False)
 
-    # print("Per file")
-    # for si in np.argsort(res['audc']):
-    #     dc,conf = (res['decoding_curve'][si],res['config'][si])
-    #     print("\n\n{} {}\n".format(conf, res['filename'][si]))
-    #     print(print_decoding_curve(*dc))
+    # Print the output to a file to be shown in GitHub Actions
+    print("Per file")
+    with open('metrics.txt', 'w') as f:
+        f.write('Per file\n')
+    for si in np.argsort(res['audc']):
+        dc,conf = (res['decoding_curve'][si],res['config'][si])
+        with open('metrics.txt', 'w') as f:
+            f.write("\n\n{} {}\n".format(conf, res['filename'][si]))
+            f.write(print_decoding_curve(*dc))
+        print("\n\n{} {}\n".format(conf, res['filename'][si]))
+        print(print_decoding_curve(*dc))
+
+
     return res
 
 
@@ -211,6 +231,15 @@ if __name__=="__main__":
            StopErr  0.96  0.93  0.89  0.81  0.69  0.60  0.56  0.56   AUSC 77.0\n\
      StopThresh(P)  0.86  0.82  0.77  0.63  0.49  0.44  0.44  0.44   SSAE 23.9")
 
+    # Print the output to a file to be shown in GitHub Actions
+    with open('metrics.txt', 'w') as f:
+            f.write("BASELINE: 336f594\n AVE-Dn\n\
+                    IntLen   134   270   371   507   642   743   878  1014\n\
+              Perr  0.94  0.76  0.56  0.36  0.27  0.25  0.23  0.23   AUDC 48.5\n\
+         Perr(est)  0.92  0.58  0.37  0.27  0.22  0.21  0.19  0.19   PSAE 24.7\n\
+           StopErr  0.96  0.93  0.89  0.81  0.69  0.60  0.56  0.56   AUSC 77.0\n\
+     StopThresh(P)  0.86  0.82  0.77  0.63  0.49  0.44  0.44  0.44   SSAE 23.9")
+
 
 
     print('------------------\n\n P L O S    O N E\n\n---------------------')
@@ -222,7 +251,15 @@ if __name__=="__main__":
          Perr(est)  0.57  0.39  0.31  0.26  0.21  0.19  0.17  0.16   PSAE 10.6\n\
            StopErr  0.94  0.94  0.78  0.53  0.44  0.42  0.41  0.41   AUSC 63.1\n\
      StopThresh(P)  0.79  0.79  0.62  0.44  0.38  0.38  0.39  0.39   SSAE 15.6')
-
+  
+    # Print the output to a file to be shown in GitHub Actions
+    with open('metrics.txt', 'w') as f:
+        f.write('BASELINE: 336f594\n Ave-DC\n\
+            IntLen   100   201   277   378   478   554   655   756\n\
+              Perr  0.72  0.41  0.39  0.27  0.26  0.20  0.18  0.15   AUDC 35.2\n\
+         Perr(est)  0.57  0.39  0.31  0.26  0.21  0.19  0.17  0.16   PSAE 10.6\n\
+           StopErr  0.94  0.94  0.78  0.53  0.44  0.42  0.41  0.41   AUSC 63.1\n\
+     StopThresh(P)  0.79  0.79  0.62  0.44  0.38  0.38  0.39  0.39   SSAE 15.6')
 
     print('------------------\n\n L O W L A N D S\n\n---------------------')
     dataset, dataset_args,loader_args,pipeline,cv = setup_lowlands()
@@ -233,4 +270,12 @@ if __name__=="__main__":
          Perr(est)  0.55  0.43  0.36  0.32  0.28  0.26  0.24  0.24   PSAE 45.4\n\
            StopErr  0.98  0.98  0.98  0.98  0.79  0.72  0.69  0.69   AUSC 86.4\n\
      StopThresh(P)  0.89  0.89  0.89  0.89  0.63  0.59  0.60  0.61   SSAE 14.7")
-
+  
+    # Print the output to a file to be shown in GitHub Actions
+    with open('metrics.txt', 'w') as f:
+        f.write("BASELINE: 336f594\n Ave-DC\n\
+            IntLen    54   109   150   205   260   301   356   411\n\
+              Perr  0.79  0.62  0.52  0.46  0.41  0.39  0.36  0.36   AUDC 51.9\n\
+         Perr(est)  0.55  0.43  0.36  0.32  0.28  0.26  0.24  0.24   PSAE 45.4\n\
+           StopErr  0.98  0.98  0.98  0.98  0.79  0.72  0.69  0.69   AUSC 86.4\n\
+     StopThresh(P)  0.89  0.89  0.89  0.89  0.63  0.59  0.60  0.61   SSAE 14.7")
