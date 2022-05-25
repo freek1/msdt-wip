@@ -12,15 +12,11 @@ jobs:
         run: |
           # Your ML workflow goes here
           pip install -r requirements.txt
+          pip install -e .
           python mindaffectBCI/decoder/offline_regression_testing.py
           
           echo "## OFFLINE REGRESSION TESTING" > report.md
           echo "\n## Model Metrics" > report.md
-          cat metrics.json >> report.md
-          
-          # echo "\n## Model Performance" >> report.md
-          # echo "Model performance metrics are on the plot below." >> report.md
-          
-          # cml-publish mindaffectBCI_decoding_curve.png --md >> report.md
+          cat metrics.txt >> report.md
           
           cml-send-comment report.md
