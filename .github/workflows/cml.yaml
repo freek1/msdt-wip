@@ -12,7 +12,9 @@ jobs:
         run: |
           # Your ML workflow goes here
           pip install -r requirements.txt
+          pip install --upgrade pip
           pip install -e .
+          
           python mindaffectBCI/decoder/offline_regression_testing.py
           
           echo "## OFFLINE REGRESSION TESTING" > report.md
