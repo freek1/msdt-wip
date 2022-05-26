@@ -16,6 +16,7 @@ jobs:
           pip install -e .
           
           python mindaffectBCI/decoder/offline_regression_testing.py
+          python csv2text.py
           
           echo "## OFFLINE REGRESSION TESTING" > report.md
           echo "\n## Model Metrics" > report.md
