@@ -1,5 +1,5 @@
 |file | clsfr | AUDC | ave-AUDC | baseline-AUDC |
-|---|---|---|---|
+|---|---|---|---|---|
 |C:\Users\freek\Desktop\data\external_data/kaggle\mindaffectBCI_noisetag_bci_cyton_201026_1536.txt | PreprocessPipeline(stages=[('metainfoadder'; MetaInfoAdder(info={'fs': -1})); ('targetencoder'; TargetEncoder()); ('clsfr'; MultiCCA(tau_ms=450))]) | 56.667 | 45.403 | 51.9 |
 |C:\Users\freek\Desktop\data\external_data/kaggle\mindaffectBCI_noisetag_bci_cyton_201026_1540.txt | PreprocessPipeline(stages=[('metainfoadder'; MetaInfoAdder(info={'fs': -1})); ('targetencoder'; TargetEncoder()); ('clsfr'; MultiCCA(tau_ms=450))]) | 54.75 | 45.403 | 51.9 |
 |C:\Users\freek\Desktop\data\external_data/kaggle\mindaffectBCI_noisetag_bci_cyton_unity_201027_1112.txt | PreprocessPipeline(stages=[('metainfoadder'; MetaInfoAdder(info={'fs': -1})); ('targetencoder'; TargetEncoder()); ('clsfr'; MultiCCA(tau_ms=450))]) | 36.667 | 45.403 | 51.9 |
