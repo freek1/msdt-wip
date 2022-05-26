@@ -2,6 +2,7 @@ import csv
 import pandas as pd
 
 files = ['kaggle', 'lowlands', 'plos_one']
+# Convert .csv into .txt with markdown for a table
 try:
     for fn in files:
         df = pd.read_csv(fn+'.csv')
@@ -23,3 +24,16 @@ try:
 except:
     print("Error opening files")
     
+try:
+    for fn in files:
+        input = fn+'.txt'
+        output = 'metrics.txt'
+
+        with open(output, "a") as my_output_file:
+            with open(input, "r") as my_input_file:
+                my_output_file.write("## "+fn+"\n")
+                [ my_output_file.write("".join(row)+'\n') for row in csv.reader(my_input_file)]
+
+
+except:
+    print("Error opening files")
