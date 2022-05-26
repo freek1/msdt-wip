@@ -16,9 +16,14 @@ jobs:
           pip install -e .
           
           python mindaffectBCI/decoder/offline_regression_testing.py
+          python csv2text.py
           
           echo "## OFFLINE REGRESSION TESTING" > report.md
-          echo "\n## Model Metrics" > report.md
-          cat metrics.txt >> report.md
+          echo "\n## Kaggle" > report.md
+          cat kaggle.txt >> report.md
+          echo "\n## Plos one" > report.md
+          cat plos_one.txt >> report.md
+          echo "\n## Lowlands" > report.md
+          cat lowlands.txt >> report.md
           
           cml-send-comment report.md
