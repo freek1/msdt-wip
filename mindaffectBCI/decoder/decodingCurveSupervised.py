@@ -253,7 +253,7 @@ def print_decoding_curve(integerationLengths,aveProbErr,aveProbErrEst=None,stopY
         s+='%18s  '%('StopThresh(P)') + " ".join(['%4.2f '%(i) for i in stopPerrThresh[logIdx]])
         s+="  SSAE %4.1f"%(comp_ssae(stopYerr,stopPerrThresh,MINSCALEPERR)) + "\n"
         
-    return s
+    return s, comp_audc(aveProbErr)
 
 
 
