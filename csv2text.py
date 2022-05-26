@@ -14,7 +14,12 @@ try:
                 [ my_output_file.write("|"+" | ".join(row)+' |\n') for row in csv.reader(my_input_file)]
             my_output_file.close()
 
-
+        with open(fn+'.txt', 'r') as f:
+            contents = f.readlines()
+        contents.insert(1, '|---|---|---|---|\n')
+        with open(fn+'.txt', 'w') as f:
+            contents = "".join(contents)
+            f.write(contents)
 except:
     print("Error opening files")
     
