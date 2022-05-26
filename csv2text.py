@@ -16,7 +16,7 @@ try:
 
         with open(fn+'.txt', 'r') as f:
             contents = f.readlines()
-        contents.insert(1, '|---|---|---|---|\n')
+        contents.insert(1, '|---|---|---|---|---|\n')
         with open(fn+'.txt', 'w') as f:
             contents = "".join(contents)
             f.write(contents)
