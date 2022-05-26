@@ -24,11 +24,14 @@ try:
 except:
     print("Error opening files")
     
+# Clear the file
+output = 'metrics.txt'
+open(output, 'w').close()
 try:
     for fn in files:
         input = fn+'.txt'
-        output = 'metrics.txt'
-
+        
+        # Write metrics for each data (kaggle, plos_one, etc)
         with open(output, "a") as my_output_file:
             with open(input, "r") as my_input_file:
                 my_output_file.write("## "+fn+"\n")

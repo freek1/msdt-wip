@@ -1,7 +1,7 @@
 |file | clsfr | AUDC | ave-AUDC | baseline-AUDC |
 |---|---|---|---|---|
-|C:\Users\freek\Desktop\data\external_data/plos_one\s01\traindata.mat | PreprocessPipeline(stages=[('metainfoadder'; MetaInfoAdder(info={'fs': -1})); ('targetencoder'; TargetEncoder()); ('clsfr'; MultiCCA(tau_ms=450))]) | 32.436 | 24.0 | 51.9 |
-|C:\Users\freek\Desktop\data\external_data/plos_one\s02\traindata.mat | PreprocessPipeline(stages=[('metainfoadder'; MetaInfoAdder(info={'fs': -1})); ('targetencoder'; TargetEncoder()); ('clsfr'; MultiCCA(tau_ms=450))]) | 15.513 | 24.0 | 51.9 |
-|C:\Users\freek\Desktop\data\external_data/plos_one\s3\traindata.mat | PreprocessPipeline(stages=[('metainfoadder'; MetaInfoAdder(info={'fs': -1})); ('targetencoder'; TargetEncoder()); ('clsfr'; MultiCCA(tau_ms=450))]) | 28.718 | 24.0 | 51.9 |
-|C:\Users\freek\Desktop\data\external_data/plos_one\s4\traindata.mat | PreprocessPipeline(stages=[('metainfoadder'; MetaInfoAdder(info={'fs': -1})); ('targetencoder'; TargetEncoder()); ('clsfr'; MultiCCA(tau_ms=450))]) | 20.256 | 24.0 | 51.9 |
-|C:\Users\freek\Desktop\data\external_data/plos_one\s5\traindata.mat | PreprocessPipeline(stages=[('metainfoadder'; MetaInfoAdder(info={'fs': -1})); ('targetencoder'; TargetEncoder()); ('clsfr'; MultiCCA(tau_ms=450))]) | 23.077 | 24.0 | 51.9 |
+|C:\Users\freek\Desktop\data\external_data/plos_one\s01\traindata.mat | PreprocessPipeline(stages=[('metainfoadder'; MetaInfoAdder(info={'fs': -1})); ('targetencoder'; TargetEncoder()); ('clsfr'; MultiCCA(tau_ms=450))]) | 28.718 | 24.0 | 51.9 |
+|C:\Users\freek\Desktop\data\external_data/plos_one\s02\traindata.mat | PreprocessPipeline(stages=[('metainfoadder'; MetaInfoAdder(info={'fs': -1})); ('targetencoder'; TargetEncoder()); ('clsfr'; MultiCCA(tau_ms=450))]) | 23.077 | 24.0 | 51.9 |
+|C:\Users\freek\Desktop\data\external_data/plos_one\s3\traindata.mat | PreprocessPipeline(stages=[('metainfoadder'; MetaInfoAdder(info={'fs': -1})); ('targetencoder'; TargetEncoder()); ('clsfr'; MultiCCA(tau_ms=450))]) | 20.256 | 24.0 | 51.9 |
+|C:\Users\freek\Desktop\data\external_data/plos_one\s4\traindata.mat | PreprocessPipeline(stages=[('metainfoadder'; MetaInfoAdder(info={'fs': -1})); ('targetencoder'; TargetEncoder()); ('clsfr'; MultiCCA(tau_ms=450))]) | 32.436 | 24.0 | 51.9 |
+|C:\Users\freek\Desktop\data\external_data/plos_one\s5\traindata.mat | PreprocessPipeline(stages=[('metainfoadder'; MetaInfoAdder(info={'fs': -1})); ('targetencoder'; TargetEncoder()); ('clsfr'; MultiCCA(tau_ms=450))]) | 15.513 | 24.0 | 51.9 |
